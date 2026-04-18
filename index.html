@@ -168,6 +168,7 @@
   .sb-2 {
     width: 200px; height: 200px; right: 6%; bottom: 12%;
     opacity: 0;
+    filter: drop-shadow(4px 4px 0 rgba(0,0,0,0.25));
     animation: popIn 0.5s ease 1.3s forwards, slowSpin 20s linear 1.8s infinite;
   }
   .sb-2:hover { transform: scale(1.1); }
@@ -202,7 +203,7 @@
   }
   .shop-header p {
     font-family: var(--body); font-size: 18px; font-style: italic;
-    color: rgba(26,14,10,0.5); letter-spacing: 1px;
+    color: rgba(26,14,10,0.75); letter-spacing: 1px;
   }
   .shop-grid {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -227,23 +228,23 @@
   .card:hover { transform: translate(-3px, -3px); box-shadow: 7px 7px 0 var(--dark); }
 
   .card-img {
-    aspect-ratio: 1; background: var(--dark); position: relative;
+    aspect-ratio: 1; background: #F2D98B; position: relative;
     display: flex; align-items: center; justify-content: center;
     overflow: hidden;
   }
   .card-img::before {
     content: ''; position: absolute; inset: 0;
-    background-image: radial-gradient(circle, rgba(212,168,67,0.07) 1.2px, transparent 1.2px);
+    background-image: radial-gradient(circle, rgba(140,26,18,0.10) 1.2px, transparent 1.2px);
     background-size: 18px 18px;
   }
-  .card-img .inner-border { position: absolute; inset: 14px; border: 1px solid rgba(212,168,67,0.18); }
+  .card-img .inner-border { position: absolute; inset: 14px; border: 1px solid rgba(140,26,18,0.18); }
   .card-img .placeholder {
     text-align: center; position: relative; z-index: 1;
   }
   .card-img .placeholder .emoji { font-size: 44px; margin-bottom: 8px; display: block; }
   .card-img .placeholder .soon {
     font-family: var(--sans); font-size: 10px; letter-spacing: 4px;
-    color: var(--gold); text-transform: uppercase;
+    color: var(--red); text-transform: uppercase;
   }
   .card-qty {
     position: absolute; top: -6px; right: -6px; z-index: 5;
@@ -261,8 +262,8 @@
     line-height: 1.1; margin-bottom: 2px;
   }
   .card-body .desc {
-    font-family: var(--body); font-size: 15px; font-style: italic;
-    color: rgba(26,14,10,0.45); margin-bottom: 16px;
+    font-family: var(--body); font-size: 16px; font-style: italic;
+    color: rgba(26,14,10,0.7); margin-bottom: 16px;
   }
   .card-foot {
     display: flex; justify-content: space-between; align-items: center;
@@ -327,12 +328,12 @@
   }
   .social-links a:hover { color: var(--cream); transform: scale(1.15); }
   footer .copy {
-    font-family: var(--body); font-size: 14px;
-    color: rgba(255,246,233,0.3); font-style: italic;
+    font-family: var(--body); font-size: 15px;
+    color: rgba(255,246,233,0.65); font-style: italic;
   }
   footer .stripe-note {
-    font-family: var(--sans); font-size: 11px;
-    color: rgba(255,246,233,0.15); margin-top: 8px; letter-spacing: 1px;
+    font-family: var(--sans); font-size: 12px;
+    color: rgba(255,246,233,0.5); margin-top: 8px; letter-spacing: 1px;
   }
 
   /* ── CART DRAWER ── */
@@ -369,14 +370,14 @@
   .cart-empty {
     text-align: center; margin-top: 60px;
     font-family: var(--body); font-size: 18px;
-    font-style: italic; color: rgba(26,14,10,0.4);
+    font-style: italic; color: rgba(26,14,10,0.65);
   }
   .cart-item {
     display: flex; justify-content: space-between; align-items: center;
     padding: 14px 0; border-bottom: 1px solid rgba(26,14,10,0.1);
   }
   .cart-item-name { font-family: var(--display); font-size: 17px; color: var(--dark); }
-  .cart-item-detail { font-family: var(--body); font-size: 14px; color: rgba(26,14,10,0.45); font-style: italic; }
+  .cart-item-detail { font-family: var(--body); font-size: 15px; color: rgba(26,14,10,0.7); font-style: italic; }
   .cart-item-remove {
     background: none; border: 1.5px solid var(--dark);
     font-family: var(--sans); font-size: 10px; font-weight: 700;
@@ -406,7 +407,7 @@
 
   /* checkout form */
   .checkout-intro {
-    font-family: var(--body); font-size: 15px; color: rgba(26,14,10,0.55);
+    font-family: var(--body); font-size: 16px; color: rgba(26,14,10,0.8);
     font-style: italic; margin-bottom: 20px; line-height: 1.6;
   }
   .form-group { margin-bottom: 16px; }
@@ -429,13 +430,13 @@
     padding: 16px; margin-top: 20px;
   }
   .order-summary h4 {
-    font-family: var(--sans); font-size: 11px; font-weight: 700;
-    letter-spacing: 3px; color: var(--gold); margin-bottom: 10px;
+    font-family: var(--sans); font-size: 12px; font-weight: 700;
+    letter-spacing: 3px; color: var(--red); margin-bottom: 10px;
   }
   .order-line {
     display: flex; justify-content: space-between;
-    font-family: var(--body); font-size: 15px;
-    color: rgba(26,14,10,0.6); margin-bottom: 4px;
+    font-family: var(--body); font-size: 16px;
+    color: rgba(26,14,10,0.85); margin-bottom: 4px;
   }
   .order-total {
     display: flex; justify-content: space-between;
@@ -447,7 +448,7 @@
   .success-msg { text-align: center; padding-top: 60px; }
   .success-msg .star { font-size: 52px; margin-bottom: 16px; color: var(--gold); }
   .success-msg h3 { font-family: var(--display); font-size: 28px; color: var(--red); margin-bottom: 12px; }
-  .success-msg p { font-family: var(--body); font-size: 17px; color: rgba(26,14,10,0.6); line-height: 1.7; }
+  .success-msg p { font-family: var(--body); font-size: 17px; color: rgba(26,14,10,0.85); line-height: 1.7; }
 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
@@ -504,7 +505,7 @@
     .shop-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
     .card-body h3 { font-size: 18px; }
     .card-price { font-size: 18px; }
-    .add-btn { padding: 7px 12px; font-size: 10px; letter-spacing: 1px; }
+    .add-btn { padding: 8px 14px; font-size: 11px; letter-spacing: 1.5px; }
     .sb-2 { width: 130px; height: 130px; right: 2%; bottom: 8%; }
     .sb-2 .starburst-text { font-size: 16px !important; }
     .hero-deco.ring, .hero-deco.line-v, .hero-deco.line-h { display: none; }
@@ -521,7 +522,6 @@
     <div class="nav-links">
       <a href="#shop">Shop</a>
       <a href="#about">About</a>
-      <a href="#contact">Contact</a>
       <button class="bag-btn" onclick="openCart()">
         Bag
         <span class="bag-badge" id="navBadge">0</span>
@@ -640,10 +640,10 @@
 <script>
 // ── DATA ──
 const stickers = [
-  { id: 1, name: "Bonnie Dunes", price: 6, desc: "Check out those Bonnie Dunes!", emoji: "🪶", img: "sticker-1.png" },
-  { id: 2, name: "Emerald Night", price: 6, desc: "Green satin & black lace", emoji: "💚" },
-  { id: 3, name: "Velvet Hour", price: 6, desc: "Deep blue velvet vibes", emoji: "🌙" },
-  { id: 4, name: "Where's Bonnie?", price: 6, desc: "The iconic catchphrase", emoji: "✨" },
+  { id: 1, name: "Bonnie Dunes", price: 6, desc: "Check out those Bonnie Dunes — black lace & fishnets", emoji: "🪶", img: "sticker-1.png" },
+  { id: 2, name: "Are we there yet?", price: 6, desc: "Blue velvet mermaid, Hollywood glam", emoji: "🌙", img: "sticker-2.png" },
+  { id: 3, name: "Serenity", price: 6, desc: "Cream feathers, golden-era swish", emoji: "🪶", img: "sticker-3.png" },
+  { id: 4, name: "Coming Soon", price: 6, desc: "One more Bonnie on the way", emoji: "✨" },
 ];
 
 let cart = {};
@@ -668,12 +668,15 @@ window.addEventListener("scroll", () => {
 // ── RENDER SHOP ──
 function renderShop() {
   const grid = document.getElementById("shopGrid");
-  grid.innerHTML = stickers.map(s => `
-    <div class="card">
+  grid.innerHTML = stickers.map(s => {
+    const padMap = { 1: 5, 2: 12, 3: 6 };
+    const pad = padMap[s.id] ?? 18;
+    return `
+    <div class="card" data-id="${s.id}">
       <div class="card-qty ${cart[s.id] ? 'show' : ''}">${cart[s.id] || 0}</div>
       <div class="card-img">
         ${s.img ? `
-          <img src="${s.img}" alt="${s.name}" style="width:100%;height:100%;object-fit:cover;">
+          <img src="${s.img}" alt="${s.name}" style="width:100%;height:100%;object-fit:contain;box-sizing:border-box;padding:${pad}px;">
         ` : `
           <div class="inner-border"></div>
           <div class="placeholder">
@@ -686,25 +689,41 @@ function renderShop() {
         <h3>${s.name}</h3>
         <p class="desc">${s.desc}</p>
         <div class="card-foot">
-          <span class="card-price">$${s.price.toFixed(2)}</span>
-          <button class="add-btn" onclick="addToCart(${s.id})">Add to Bag</button>
+          <span class="card-price">${s.img ? '$' + s.price.toFixed(2) : ''}</span>
+          ${s.img
+            ? `<button class="add-btn" onclick="addToCart(${s.id})">Add to Bag</button>`
+            : `<span class="add-btn" style="opacity:0.5;cursor:default;background:var(--dark);">Coming Soon</span>`}
         </div>
       </div>
     </div>
-  `).join("");
+  `;
+  }).join("");
 }
 
 // ── CART LOGIC ──
+function updateCardQty(id) {
+  const card = document.querySelector(`.card[data-id="${id}"]`);
+  if (!card) return;
+  const qtyEl = card.querySelector('.card-qty');
+  const qty = cart[id] || 0;
+  qtyEl.textContent = qty;
+  qtyEl.classList.toggle('show', qty > 0);
+  if (qty > 0) {
+    qtyEl.style.animation = 'none';
+    qtyEl.offsetHeight;
+    qtyEl.style.animation = 'badgePop 0.35s ease';
+  }
+}
 function addToCart(id) {
   cart[id] = (cart[id] || 0) + 1;
   updateBadge();
-  renderShop();
+  updateCardQty(id);
 }
 function removeFromCart(id) {
   if (cart[id] > 1) cart[id]--;
   else delete cart[id];
   updateBadge();
-  renderShop();
+  updateCardQty(id);
   renderCart();
 }
 function updateBadge() {
@@ -764,8 +783,8 @@ function renderCart() {
       footer.style.display = "block";
       const savings = getSavings();
       footer.innerHTML = `
-        ${savings > 0 ? `<div style="font-family:var(--body);font-size:14px;color:var(--teal);font-style:italic;margin-bottom:8px;text-align:center;">You're saving $${savings.toFixed(2)} with the bundle deal!</div>` : ''}
-        ${totalQty % 3 !== 0 && totalQty % 3 > 0 ? `<div style="font-family:var(--body);font-size:13px;color:rgba(26,14,10,0.45);font-style:italic;margin-bottom:8px;text-align:center;">Add ${3 - (totalQty % 3)} more for the 3-for-$15 deal</div>` : ''}
+        ${savings > 0 ? `<div style="font-family:var(--sans);font-size:14px;font-weight:700;color:var(--red);margin-bottom:8px;text-align:center;letter-spacing:0.5px;">You're saving $${savings.toFixed(2)} with the bundle deal!</div>` : ''}
+        ${totalQty % 3 !== 0 && totalQty % 3 > 0 ? `<div style="font-family:var(--sans);font-size:13px;font-weight:500;color:var(--dark);margin-bottom:10px;text-align:center;letter-spacing:0.3px;">Add ${3 - (totalQty % 3)} more for the 3-for-$15 deal</div>` : ''}
         <div class="cart-total"><span>Total</span><span>$${total.toFixed(2)}</span></div>
         <button class="checkout-btn" onclick="goCheckout()">Checkout</button>
       `;
@@ -803,11 +822,22 @@ function renderCart() {
     footer.innerHTML = `<button class="checkout-btn" onclick="placeOrder()">Place Order</button>`;
   } else if (cartView === "success") {
     title.textContent = "Done!";
+    const nameBit = formData.name ? `, ${formData.name}` : '';
     body.innerHTML = `
       <div class="success-msg">
         <div class="star">✦</div>
-        <h3>Order Received!</h3>
-        <p>Thanks, ${formData.name}! Bonnie will be in touch at ${formData.email} to arrange delivery and payment.</p>
+        <h3>Payment Received!</h3>
+        <p>Thanks${nameBit}! Stripe has emailed you a receipt. Bonnie will be in touch soon to arrange pickup or local delivery.</p>
+      </div>
+    `;
+    footer.style.display = "none";
+  } else if (cartView === "cancelled") {
+    title.textContent = "Cancelled";
+    body.innerHTML = `
+      <div class="success-msg">
+        <div class="star" style="color:var(--red)">✕</div>
+        <h3>Checkout Cancelled</h3>
+        <p>No payment was taken. Your bag is still here whenever you're ready.</p>
       </div>
     `;
     footer.style.display = "none";
@@ -815,17 +845,45 @@ function renderCart() {
 }
 
 function goCheckout() { cartView = "checkout"; renderCart(); }
-function placeOrder() {
+async function placeOrder() {
   if (!formData.name || !formData.email) { alert("Please fill in your name and email."); return; }
-  cartView = "success";
-  cart = {};
-  updateBadge();
-  renderShop();
-  renderCart();
+  const btn = document.querySelector('#cartFooter .checkout-btn');
+  if (btn) { btn.disabled = true; btn.textContent = 'Redirecting to Stripe…'; }
+  try {
+    const res = await fetch('/.netlify/functions/create-checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ cart, name: formData.name, email: formData.email, message: formData.message }),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || 'Checkout failed');
+    }
+    const { url } = await res.json();
+    window.location.href = url;
+  } catch (e) {
+    alert('Sorry, something went wrong: ' + e.message);
+    if (btn) { btn.disabled = false; btn.textContent = 'Place Order'; }
+  }
 }
 
 // ── INIT ──
 renderShop();
+
+// ── STRIPE RETURN ──
+(function handleStripeReturn() {
+  const params = new URLSearchParams(window.location.search);
+  const paid = params.get('paid') === '1';
+  const cancelled = params.get('cancelled') === '1';
+  if (!paid && !cancelled) return;
+  cartView = paid ? 'success' : 'cancelled';
+  setTimeout(() => {
+    renderCart();
+    document.getElementById('cartOverlay').classList.add('open');
+    document.getElementById('cartDrawer').classList.add('open');
+  }, 250);
+  history.replaceState({}, '', window.location.pathname);
+})();
 
 // ── SCROLL ANIMATIONS ──
 const observer = new IntersectionObserver((entries) => {
@@ -845,23 +903,14 @@ observeCards();
 const aboutInner = document.querySelector('.about-inner');
 if (aboutInner) observer.observe(aboutInner);
 
-// override addToCart to trigger button animation
+// re-trigger badge pop on add
 const _origAdd = addToCart;
 addToCart = function(id) {
   _origAdd(id);
-  observeCards();
-  // re-trigger badge pop
   const badge = document.getElementById("navBadge");
   badge.style.animation = 'none';
   badge.offsetHeight; // reflow
   badge.style.animation = '';
-};
-
-// override renderShop to re-observe
-const _origRender = renderShop;
-renderShop = function() {
-  _origRender();
-  observeCards();
 };
 </script>
 </body>
