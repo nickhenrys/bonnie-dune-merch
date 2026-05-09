@@ -104,6 +104,14 @@ exports.handler = async (event) => {
         items: JSON.stringify(items),
         total_qty: String(totalQty),
       },
+      payment_intent_data: {
+        metadata: {
+          customer_name: name,
+          customer_message: (message || '').slice(0, 500),
+          items: JSON.stringify(items),
+          total_qty: String(totalQty),
+        },
+      },
       success_url: `${origin}/?paid=1`,
       cancel_url: `${origin}/?cancelled=1`,
     });
