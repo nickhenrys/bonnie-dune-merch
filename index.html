@@ -40,8 +40,16 @@
   }
 
   /* ── NAV ── */
+  .preorder-banner {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 110;
+    background: var(--gold); color: var(--red-dark);
+    font-family: var(--sans); font-size: 12px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase; text-align: center;
+    padding: 8px 16px; border-bottom: 2px solid var(--red-dark);
+  }
+  .preorder-banner .star { color: var(--red); margin: 0 8px; }
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    position: fixed; top: 32px; left: 0; right: 0; z-index: 100;
     transition: all 0.35s ease;
     padding: 0 24px;
   }
@@ -518,6 +526,11 @@
 </head>
 <body>
 
+<!-- PRE-ORDER BANNER -->
+<div class="preorder-banner">
+  <span class="star">✦</span>Pre-orders open · Stickers ship as soon as stock arrives<span class="star">✦</span>
+</div>
+
 <!-- NAV -->
 <nav id="mainNav">
   <div class="nav-inner">
@@ -575,7 +588,7 @@
 
   <h1>Bonnie<br>Dune</h1>
   <p class="hero-tagline">Burlesque · Stickers</p>
-  <a href="#shop" class="hero-cta">Shop Now</a>
+  <a href="#shop" class="hero-cta">Preorder Now</a>
 
   <div class="section-divider" style="margin-top:32px;">
     <div class="line"></div><div class="diamond"></div><div class="line"></div>
@@ -591,7 +604,8 @@
   <div class="shop-header">
     <div class="section-divider"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
     <h2>The Collection</h2>
-    <p>$6 each or 3 for $15 · For your laptop, water bottle, or anything that needs more glamour</p>
+    <p>$6 each or 3 for $15 · For your laptop, water bottle, or anything that needs more glamour (or references to The Castle)
+    </p>
   </div>
   <div class="shop-grid" id="shopGrid"></div>
 </section>
@@ -626,7 +640,7 @@
     </a>
   </div>
   <p class="copy">© 2026 Bonnie Dune · Kaurna Country, South Australia</p>
-  <p class="stripe-note">Local pickup/delivery only · Payment via Stripe</p>
+  <p class="stripe-note">Ships worldwide · Free local pickup in Adelaide · Payment via Stripe</p>
 </footer>
 
 <!-- CART -->
@@ -694,7 +708,7 @@ function renderShop() {
         <div class="card-foot">
           <span class="card-price">${s.img ? '$' + s.price.toFixed(2) : ''}</span>
           ${s.img
-            ? `<button class="add-btn" onclick="addToCart(${s.id})">Add to Bag</button>`
+            ? `<button class="add-btn" onclick="addToCart(${s.id})">Pre-order</button>`
             : `<span class="add-btn" style="opacity:0.5;cursor:default;background:var(--dark);">Coming Soon</span>`}
         </div>
       </div>
@@ -795,8 +809,8 @@ function renderCart() {
   } else if (cartView === "checkout") {
     title.textContent = "Checkout";
     body.innerHTML = `
-      <p class="checkout-intro">Pop your details in below and Bonnie will be in touch to arrange
-      pickup/delivery and payment. Adelaide locals only for now!</p>
+      <p class="checkout-intro">Pop your details in below, then choose shipping (Australia or international)
+      or free local pickup in Adelaide at the next step.</p>
       <div class="form-group">
         <label>Name</label>
         <input type="text" id="fName" value="${formData.name}" oninput="formData.name=this.value">
@@ -830,7 +844,7 @@ function renderCart() {
       <div class="success-msg">
         <div class="star">✦</div>
         <h3>Payment Received!</h3>
-        <p>Thanks${nameBit}! Stripe has emailed you a receipt. Bonnie will be in touch soon to arrange pickup or local delivery.</p>
+        <p>Thanks${nameBit}! Stripe has emailed you a receipt. If you chose local pickup, Bonnie will be in touch to arrange a time. Otherwise your stickers will be in the post soon.</p>
       </div>
     `;
     footer.style.display = "none";
